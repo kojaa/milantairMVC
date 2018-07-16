@@ -47,7 +47,7 @@ final class Route {
     public function extractArguments(string $url): array {
         $matches = [];
         $arguments = [];
-        preg_match_all($this->pattern, $url, $arguments);
+        preg_match_all($this->pattern, $url, $matches);
 
         if(isset($matches[1])){
             $arguments = $matches[1];

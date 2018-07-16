@@ -8,7 +8,9 @@
             "email": "kojic97stole@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "twig/twig": "^2.5"
+    },
 
     "autoload": {
         "psr-4": {

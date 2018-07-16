@@ -41,8 +41,20 @@
     call_user_func_array([$controller, $route->getMethodName()], $arguments);
     $data = $controller->getData();
 
-    foreach($data as $name => $value){
-        $$name = $value;
-    }
+    // foreach($data as $name => $value){
+    //     $$name = $value;
+    // }
 
-    require_once "views/". $route->getControllerName() ."/". $route->getMethodName().".php";
+    // require_once "views/". $route->getControllerName() ."/". $route->getMethodName().".php";
+
+    $loader = new Twig_Loader_Filesystem("./views");
+
+    $twig = new Twig_Environment($loader, [
+        'cache' => '../twig-cache',
+        'auto_reload' => true
+    ]);
+
+    echo $twig->render(
+        $route->getControllerName() .'/'. $route->getMethodName(). '.html',
+        $data
+    );

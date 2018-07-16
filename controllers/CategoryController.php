@@ -20,4 +20,8 @@ class CategoryController extends Controller {
 
     }
 
+    public function delete($id){
+        die('nije zavrsena metoda');
+    }
+
 }
