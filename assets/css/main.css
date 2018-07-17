@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+}
+
+body {
+    margin: 0 auto;
+    width: 900px;
+}
+
+.site-header {
+    display: grid;
+    grid-template-areas: "banner social"
+                         "banner search"
+                         "menu  menu ";
+}
+.banners { grid-area: banner; background-color: chocolate; }
+.social-icons { grid-area: social; text-align: right;}
+.search-box { grid-area: search; text-align: right;}
+
+.social-icons img {
+    margin: 0px 10px;
+    width: 16px;
+    height: 16px;
+}
+
+#main-menu { 
+    margin: 20px 0px;
+    grid-area: menu;
+}
+
+#main-menu > ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    align-content: stretch;
+}
+
+#main-menu > ul > li {
+    text-align: center;
+    flex-grow: 1;
+}
+
+
+#main-menu > ul > li:hover{
+    background: rgba(200, 200, 200, 0.3)
+}
+
+#main-menu > ul > li > a {
+    text-decoration: none;
+    display: block;
+    padding: 10px 0px;
+    color: black;
+}
+
+.categories {
+    display: flex;
+    flex-direction: row;
+    align-content: stretch;
+    flex-wrap: wrap;
+}
+.category {
+    width: 50%;
+    text-align: center;
+    padding: 50px 100px;
+    border: 1px solid #ccc;
+    background: rgb(200, 200, 200, 0.2);
+    text-decoration: none;
+    color: black;
+}
+
+.category:hover {
+    border: 1px solid black;
+    background: rgba(200, 200, 200, 0.6);
+}
+
+.site-footer {
+    margin-top: 40px;
+    text-align: center;
+}

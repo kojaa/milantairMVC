@@ -28,7 +28,7 @@ class __TwigTemplate_bee3e6d2dea24f04d6e36f64e8828180e1892bb610100cc326f8eb5d50c
     <meta charset=\"UTF-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
     <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
-
+    <link rel=\"stylesheet\" href=\"assets/css/main.css\">
     <title>
         Ta &amp; Ta 
         ";
@@ -40,10 +40,24 @@ class __TwigTemplate_bee3e6d2dea24f04d6e36f64e8828180e1892bb610100cc326f8eb5d50c
 </head>
 <body>
 
-    <header>
+    <header class=\"site-header\">
         <div class=\"banners\">
             <a href=\"milantair/mvc/\" class=\"banner\"></a>
-            <img src=\"milantair/mvc/assets/img/banner-1.jpg\" alt=\"BANNER 1\">
+            <img src=\"milantair/mvc/assets/img/banner-1.jpg\" alt=\"BANNER1\">
+        </div>
+        <div class=\"social-icons\">
+            <a href=\"\"><img src=\"/assets/img/social/linkedin.png\" alt=\"LI\"></a>
+            <a href=\"\"><img src=\"/assets/img/social/facebook.png\" alt=\"FB\"></a>
+            <a href=\"\"><img src=\"/assets/img/social/twitter.png\" alt=\"TW\"></a>
+            <a href=\"\"><img src=\"/assets/img/social/google-plus.png\" alt=\"GP\"></a>
+            <a href=\"\"><img src=\"/assets/img/social/youtube.png\" alt=\"YT\"></a>
+        </div>
+
+        <div class=\"search-box\">
+            <form action=\"/search\" method=\"POST\">
+                <input type=\"text\" name=\"q\" placeholder=\"Unesite kljucne reci\">
+                <button type=\"submit\">Search</button>
+            </form>
         </div>
 
         <nav id=\"main-menu\">
@@ -60,12 +74,12 @@ class __TwigTemplate_bee3e6d2dea24f04d6e36f64e8828180e1892bb610100cc326f8eb5d50c
 
     <main>
         ";
-        // line 37
+        // line 51
         $this->displayBlock('main', $context, $blocks);
-        // line 39
+        // line 53
         echo "    </main>
 
-    <footer>
+    <footer class=\"site-footer\">
         &copy; 2018 Aukcijska kuca Ta &amp; Ta
     </footer>
 
@@ -81,10 +95,10 @@ class __TwigTemplate_bee3e6d2dea24f04d6e36f64e8828180e1892bb610100cc326f8eb5d50c
         ";
     }
 
-    // line 37
+    // line 51
     public function block_main($context, array $blocks = array())
     {
-        // line 38
+        // line 52
         echo "        ";
     }
 
@@ -95,7 +109,7 @@ class __TwigTemplate_bee3e6d2dea24f04d6e36f64e8828180e1892bb610100cc326f8eb5d50c
 
     public function getDebugInfo()
     {
-        return array (  88 => 38,  85 => 37,  80 => 11,  77 => 10,  66 => 39,  64 => 37,  38 => 13,  36 => 10,  25 => 1,);
+        return array (  102 => 52,  99 => 51,  94 => 11,  91 => 10,  80 => 53,  78 => 51,  38 => 13,  36 => 10,  25 => 1,);
     }
 
     public function getSourceContext()

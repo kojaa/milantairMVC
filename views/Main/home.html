@@ -1,15 +1,14 @@
 {% extends '_global/index.html' %}
 
 {% block main %}
-<nav>
-    <ul>
+{% spaceless %}
+
+<div class="categories">
         {% for category in categories %}
-    <li>
-        <a href="category/{{ category.category_id }}">
+        <a class="category" href="category/{{ category.category_id }}">
             {{ category.name|escape }}
         </a>
-    </li>
     {% endfor %}
-    </ul>
-</nav>
+</div>
+{% endspaceless %}
 {% endblock %}

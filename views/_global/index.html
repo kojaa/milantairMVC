@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
+    <link rel="stylesheet" href="assets/css/main.css">
     <title>
         Ta &amp; Ta 
         {% block naslov %}
@@ -15,10 +15,24 @@
 </head>
 <body>
 
-    <header>
+    <header class="site-header">
         <div class="banners">
             <a href="milantair/mvc/" class="banner"></a>
-            <img src="milantair/mvc/assets/img/banner-1.jpg" alt="BANNER 1">
+            <img src="milantair/mvc/assets/img/banner-1.jpg" alt="BANNER1">
+        </div>
+        <div class="social-icons">
+            <a href=""><img src="/assets/img/social/linkedin.png" alt="LI"></a>
+            <a href=""><img src="/assets/img/social/facebook.png" alt="FB"></a>
+            <a href=""><img src="/assets/img/social/twitter.png" alt="TW"></a>
+            <a href=""><img src="/assets/img/social/google-plus.png" alt="GP"></a>
+            <a href=""><img src="/assets/img/social/youtube.png" alt="YT"></a>
+        </div>
+
+        <div class="search-box">
+            <form action="/search" method="POST">
+                <input type="text" name="q" placeholder="Unesite kljucne reci">
+                <button type="submit">Search</button>
+            </form>
         </div>
 
         <nav id="main-menu">
@@ -38,7 +52,7 @@
         {% endblock %}
     </main>
 
-    <footer>
+    <footer class="site-footer">
         &copy; 2018 Aukcijska kuca Ta &amp; Ta
     </footer>
 
