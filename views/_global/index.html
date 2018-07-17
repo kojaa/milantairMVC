@@ -4,16 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Sajt</title>
+
+    <title>
+        Ta &amp; Ta 
+        {% block naslov %}
+        Pocetna
+        {% endblock %}
+    </title>
+
 </head>
 <body>
+
+    <header>
+        <div class="banners">
+            <a href="milantair/mvc/" class="banner"></a>
+            <img src="milantair/mvc/assets/img/banner-1.jpg" alt="BANNER 1">
+        </div>
+
+        <nav id="main-menu">
+            <ul>
+                <li><a href="index.php">Pocetna</a>
+                <li><a href="categories">Kategorije</a>
+                <li><a href="profile">Profil</a>
+                <li><a href="contact">Kontakt</a>
+                <li><a href="log-out">Odjava</a>
+            </ul>
+        </nav>
+
+    </header>
+
     <main>
         {% block main %}
         {% endblock %}
     </main>
 
     <footer>
-        &copy; 2018 Your website
+        &copy; 2018 Aukcijska kuca Ta &amp; Ta
     </footer>
+
 </body>
 </html>

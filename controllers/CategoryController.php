@@ -8,6 +8,7 @@
 
     use App\Models\UserModel;
     use App\Models\CategoryModel;
+    use App\Models\AuctionModel;
 
 class CategoryController extends Controller {
 
@@ -16,12 +17,15 @@ class CategoryController extends Controller {
         $categoryModel = new CategoryModel($this->getDatabaseConnection());
         $category = $categoryModel->getById($id);
 
+        if(!$category){
+            header("Location: http://localhost/milantair/MVC/");
+            exit;
+        }
+
         $this->set('category', $category);
 
+        $auctionModel = new AuctionModel($this->getDatabaseConnection());
+        $auctionsInCategory = $auctionModel->getAllByCategoryId($id);
+        $this->set('auctionsInCategory', $auctionsInCategory);
     }
-
-    public function delete($id){
-        die('nije zavrsena metoda');
-    }
-
 }

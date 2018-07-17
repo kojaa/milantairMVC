@@ -8,6 +8,7 @@
     use App\Core\Router;
     use App\Models\UserModel;
     use App\Models\CategoryModel;
+    use App\Models\AuctionModel;
     use App\Controllers\MainController;
 
     $databaseConfiguration = new DatabaseConfiguration(
@@ -50,7 +51,7 @@
     $loader = new Twig_Loader_Filesystem("./views");
 
     $twig = new Twig_Environment($loader, [
-        'cache' => '../twig-cache',
+        'cache' => 'twig-cache',
         'auto_reload' => true
     ]);
 

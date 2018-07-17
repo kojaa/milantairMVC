@@ -11,30 +11,42 @@ class __TwigTemplate_02fa650a2898b3257782ec2b9c1af1fb2c5294cf8d2a2de4e0dec472000
 
         $this->source = $this->getSourceContext();
 
-        $this->parent = false;
-
+        // line 1
+        $this->parent = $this->loadTemplate("_global/index.html", "Main/home.html", 1);
         $this->blocks = array(
+            'main' => array($this, 'block_main'),
         );
+    }
+
+    protected function doGetParent(array $context)
+    {
+        return "_global/index.html";
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        // line 1
+        $this->parent->display($context, array_merge($this->blocks, $blocks));
+    }
+
+    // line 3
+    public function block_main($context, array $blocks = array())
+    {
+        // line 4
         echo "<nav>
     <ul>
         ";
-        // line 3
+        // line 6
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 4
+            // line 7
             echo "    <li>
         <a href=\"category/";
-            // line 5
+            // line 8
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category_id", array()), "html", null, true);
             echo "\">
             ";
-            // line 6
+            // line 9
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", array()));
             echo "
         </a>
@@ -44,7 +56,7 @@ class __TwigTemplate_02fa650a2898b3257782ec2b9c1af1fb2c5294cf8d2a2de4e0dec472000
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 10
+        // line 13
         echo "    </ul>
 </nav>
 ";
@@ -62,7 +74,7 @@ class __TwigTemplate_02fa650a2898b3257782ec2b9c1af1fb2c5294cf8d2a2de4e0dec472000
 
     public function getDebugInfo()
     {
-        return array (  48 => 10,  38 => 6,  34 => 5,  31 => 4,  27 => 3,  23 => 1,);
+        return array (  60 => 13,  50 => 9,  46 => 8,  43 => 7,  39 => 6,  35 => 4,  32 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
