@@ -28,7 +28,7 @@ class __TwigTemplate_bee3e6d2dea24f04d6e36f64e8828180e1892bb610100cc326f8eb5d50c
     <meta charset=\"UTF-8\">
     <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
     <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
-    <link rel=\"stylesheet\" href=\"assets/css/main.css\">
+    <link rel=\"stylesheet\" href=\"http://localhost/milantair/MVC/assets/css/main.css\">
     <title>
         Ta &amp; Ta 
         ";
@@ -42,19 +42,19 @@ class __TwigTemplate_bee3e6d2dea24f04d6e36f64e8828180e1892bb610100cc326f8eb5d50c
 
     <header class=\"site-header\">
         <div class=\"banners\">
-            <a href=\"milantair/mvc/\" class=\"banner\"></a>
-            <img src=\"milantair/mvc/assets/img/banner-1.jpg\" alt=\"BANNER1\">
+            <a href=\"http://localhost/milantair/MVC/\" class=\"banner\"></a>
+            <img src=\"http://localhost/milantair/MVC/assets/img/banner-1.jpg\" alt=\"BANNER1\">
         </div>
         <div class=\"social-icons\">
-            <a href=\"\"><img src=\"/assets/img/social/linkedin.png\" alt=\"LI\"></a>
-            <a href=\"\"><img src=\"/assets/img/social/facebook.png\" alt=\"FB\"></a>
-            <a href=\"\"><img src=\"/assets/img/social/twitter.png\" alt=\"TW\"></a>
-            <a href=\"\"><img src=\"/assets/img/social/google-plus.png\" alt=\"GP\"></a>
-            <a href=\"\"><img src=\"/assets/img/social/youtube.png\" alt=\"YT\"></a>
+            <a href=\"\"><img src=\"http://localhost/milantair/MVC/assets/img/social/linkedin.png\" alt=\"LI\"></a>
+            <a href=\"\"><img src=\"http://localhost/milantair/MVC/assets/img/social/facebook.png\" alt=\"FB\"></a>
+            <a href=\"\"><img src=\"http://localhost/milantair/MVC/assets/img/social/twitter.png\" alt=\"TW\"></a>
+            <a href=\"\"><img src=\"http://localhost/milantair/MVC/assets/img/social/google-plus.png\" alt=\"GP\"></a>
+            <a href=\"\"><img src=\"http://localhost/milantair/MVC/assets/img/social/youtube.png\" alt=\"YT\"></a>
         </div>
 
         <div class=\"search-box\">
-            <form action=\"/search\" method=\"POST\">
+            <form action=\"http://localhost/milantair/MVC/search\" method=\"POST\">
                 <input type=\"text\" name=\"q\" placeholder=\"Unesite kljucne reci\">
                 <button type=\"submit\">Search</button>
             </form>
@@ -62,11 +62,11 @@ class __TwigTemplate_bee3e6d2dea24f04d6e36f64e8828180e1892bb610100cc326f8eb5d50c
 
         <nav id=\"main-menu\">
             <ul>
-                <li><a href=\"index.php\">Pocetna</a>
-                <li><a href=\"categories\">Kategorije</a>
-                <li><a href=\"profile\">Profil</a>
-                <li><a href=\"contact\">Kontakt</a>
-                <li><a href=\"log-out\">Odjava</a>
+                <li><a href=\"http://localhost/milantair/MVC/\">Pocetna</a>
+                <li><a href=\"http://localhost/milantair/MVC/categories\">Kategorije</a>
+                <li><a href=\"http://localhost/milantair/MVC/profile\">Profil</a>
+                <li><a href=\"http://localhost/milantair/MVC/contact\">Kontakt</a>
+                <li><a href=\"http://localhost/milantair/MVC/log-out\">Odjava</a>
             </ul>
         </nav>
 

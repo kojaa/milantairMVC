@@ -42,7 +42,7 @@ class __TwigTemplate_02fa650a2898b3257782ec2b9c1af1fb2c5294cf8d2a2de4e0dec472000
         $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
             // line 8
-            echo "        <a class=\"category\" href=\"category/";
+            echo "        <a class=\"category\" href=\"http://localhost/milantair/MVC/category/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category_id", array()), "html", null, true);
             echo "\">
             ";

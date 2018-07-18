@@ -33,47 +33,72 @@ class __TwigTemplate_3281468df1336cfa792a85704c1452b1fe2a1c22b75f25c9cfcc757d592
     public function block_main($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>";
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["category"] ?? null), "name", array()));
-        echo "</h1>
-<p>Spisak aukcija u ovoj kategoriji je:</p>
-
+        echo "
 <ul> 
     ";
-        // line 8
+        // line 6
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["auctionsInCategory"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["auction"]) {
+            // line 7
+            echo "        <li class=\"auction\"> 
+
+        <a href=\"http://localhost/milantair/MVC/auction/";
             // line 9
-            echo "        <li> 
-        <a href=\"auction/";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auction"], "auction_id", array()), "html", null, true);
+            echo "\" class=\"auction-title\">
+            ";
             // line 10
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auction"], "title", array()));
+            echo "
+        </a>
+            <span class=\"auction-date1\"> ";
+            // line 12
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auction"], "created_at", array()));
+            echo "</span>
+            <span class=\"auction-date2\"> ";
+            // line 13
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auction"], "expires_at", array()));
+            echo "</span>
+            <span class=\"auction-price\"> ";
+            // line 14
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auction"], "starting_price", array()));
+            echo " &euro;</span>
+
+            <a class=\"auction-big-image\" href=\"http://localhost/milantair/MVC/auction/";
+            // line 16
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auction"], "auction_id", array()), "html", null, true);
             echo "\">
-            ";
-            // line 11
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auction"], "title", array()));
-            echo "<br></a>
-            ";
-            // line 12
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auction"], "description", array()));
-            echo "<br>
+            <img src=\"#\" alt=\"Velika slika - ";
+            // line 17
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auction"], "auction_id", array()), "html", null, true);
+            echo "\" >
+            </a>
+            <img src=\"#\" alt=\"Mala slika 1- ";
+            // line 19
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auction"], "auction_id", array()), "html", null, true);
+            echo "\" class=\"auction-small-image image-1\">
+
+            <img src=\"#\" alt=\"Mala slika 2- ";
+            // line 21
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auction"], "auction_id", array()), "html", null, true);
+            echo "\" class=\"auction-small-image image-2\">
         
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['auction'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 14
+        // line 23
         echo " 
 </ul>
 ";
     }
 
-    // line 18
+    // line 27
     public function block_naslov($context, array $blocks = array())
     {
-        // line 19
+        // line 28
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["category"] ?? null), "name", array()));
         echo "
 ";
@@ -91,7 +116,7 @@ class __TwigTemplate_3281468df1336cfa792a85704c1452b1fe2a1c22b75f25c9cfcc757d592
 
     public function getDebugInfo()
     {
-        return array (  77 => 19,  74 => 18,  68 => 14,  59 => 12,  55 => 11,  51 => 10,  48 => 9,  44 => 8,  36 => 4,  33 => 3,  15 => 1,);
+        return array (  102 => 28,  99 => 27,  93 => 23,  84 => 21,  79 => 19,  74 => 17,  70 => 16,  65 => 14,  61 => 13,  57 => 12,  52 => 10,  48 => 9,  44 => 7,  40 => 6,  36 => 4,  33 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

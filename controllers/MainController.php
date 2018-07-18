@@ -9,6 +9,8 @@
     use App\Models\UserModel;
     use App\Models\CategoryModel;
 
+    use Configuration;
+
 class MainController extends Controller {
 
     public function home(){

@@ -11,6 +11,8 @@
     use App\Models\AuctionModel;
     use App\Models\OfferModel;
 
+    use Configuration;
+
 class AuctionController extends Controller {
 
     public function show($id){
@@ -18,7 +20,7 @@ class AuctionController extends Controller {
         $auction = $auctionModel->getById($id);
 
         if(!$auction){
-            header("Location: http://localhost/milantair/MVC/");
+            header("Location:". Configuration::BASE);
             exit;
         }
 

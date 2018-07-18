@@ -1,15 +1,24 @@
 {% extends '_global/index.html' %}
 
 {% block main %}
-<h1>{{ category.name|escape }}</h1>
-<p>Spisak aukcija u ovoj kategoriji je:</p>
 
 <ul> 
     {% for auction in auctionsInCategory %}
-        <li> 
-        <a href="auction/{{auction.auction_id}}">
-            {{auction.title|escape}}<br></a>
-            {{auction.description|escape}}<br>
+        <li class="auction"> 
+
+        <a href="http://localhost/milantair/MVC/auction/{{auction.auction_id}}" class="auction-title">
+            {{auction.title|escape}}
+        </a>
+            <span class="auction-date1"> {{auction.created_at|escape}}</span>
+            <span class="auction-date2"> {{auction.expires_at|escape}}</span>
+            <span class="auction-price"> {{auction.starting_price|escape}} &euro;</span>
+
+            <a class="auction-big-image" href="http://localhost/milantair/MVC/auction/{{auction.auction_id}}">
+            <img src="#" alt="Velika slika - {{auction.auction_id}}" >
+            </a>
+            <img src="#" alt="Mala slika 1- {{auction.auction_id}}" class="auction-small-image image-1">
+
+            <img src="#" alt="Mala slika 2- {{auction.auction_id}}" class="auction-small-image image-2">
         
     {% endfor %} 
 </ul>

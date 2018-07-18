@@ -1,10 +1,10 @@
 RewriteEngine On
 
-RewriteBase /
+RewriteBase /milantair/mvc/
 
 RewriteCond %{REQUEST_FILENAME} !-f
 
 RewriteCond %{REQUEST_FILENAME} !-d
 
-RewriteRule ^(.*)$ milantair/MVC/index.php?URL=$1 [L]
+RewriteRule ^(.*)$ ./index.php?URL=$1 [L]
 

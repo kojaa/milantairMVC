@@ -6,9 +6,11 @@
     use App\Core\DatabaseConfiguration;
     use App\Core\DatabaseConnection;
     use App\Core\Router;
+
     use App\Models\UserModel;
     use App\Models\CategoryModel;
     use App\Models\AuctionModel;
+    
     use App\Controllers\MainController;
 
     $databaseConfiguration = new DatabaseConfiguration(
@@ -17,6 +19,8 @@
         Configuration::DATABASE_PASS,
         Configuration::DATABASE_NAME
     );
+
+    define('BASE', Configuration::BASE);
 
     $databaseConnection = new DatabaseConnection($databaseConfiguration);
 

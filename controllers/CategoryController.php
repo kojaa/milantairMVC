@@ -10,6 +10,8 @@
     use App\Models\CategoryModel;
     use App\Models\AuctionModel;
 
+    use Configuration;
+
 class CategoryController extends Controller {
 
     public function show($id){
@@ -18,7 +20,7 @@ class CategoryController extends Controller {
         $category = $categoryModel->getById($id);
 
         if(!$category){
-            header("Location: http://localhost/milantair/MVC/");
+            header("Location:". Configuration::BASE);
             exit;
         }
 

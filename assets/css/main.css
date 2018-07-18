@@ -80,3 +80,21 @@ body {
     margin-top: 40px;
     text-align: center;
 }
+
+.auction {
+    display: grid;
+    grid-template-areas: "big-image big-image small-image-1 title title title"
+                         "big-image big-image small-image-2 date1 date2 price";
+    grid-template-columns: 120px 0px 80px auto;
+    border-bottom: 1px solid #444;
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+.auction > .auction-title { grid-area: title; }
+.auction > .auction-date1 { grid-area: date1; text-align: center;}
+.auction > .auction-date2 { grid-area: date2; text-align: center;}
+.auction > .auction-price { grid-area: price; text-align: right;}
+.auction > .auction-big-image { grid-area: big-image; height: 130px; width: 120px;}
+.auction > .image-1 { grid-area: small-image-1; width: 80px;}
+.auction > .image-2 { grid-area: small-image-2; width: 80px;}
