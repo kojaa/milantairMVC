@@ -1,7 +1,7 @@
 {% extends '_global/index.html' %}
 
 {% block main %}
-
+    
 <ul> 
     {% for auction in auctionsInCategory %}
         <li class="auction"> 
@@ -19,9 +19,12 @@
             <img src="#" alt="Mala slika 1- {{auction.auction_id}}" class="auction-small-image image-1">
 
             <img src="#" alt="Mala slika 2- {{auction.auction_id}}" class="auction-small-image image-2">
+            
         
     {% endfor %} 
 </ul>
+
+
 {% endblock %}
 
 {% block naslov %}

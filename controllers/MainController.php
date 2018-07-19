@@ -17,7 +17,6 @@ class MainController extends Controller {
 
         $categoryModel = new CategoryModel($this->getDatabaseConnection());
         $categories = $categoryModel->getAll();
-
         $this->set('categories', $categories);
 
     }

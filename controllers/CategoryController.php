@@ -27,7 +27,7 @@ class CategoryController extends Controller {
         $this->set('category', $category);
 
         $auctionModel = new AuctionModel($this->getDatabaseConnection());
-        $auctionsInCategory = $auctionModel->getAllByAuctionId($id);
+        $auctionsInCategory = $auctionModel->getAllByCategoryId($id);
         $this->set('auctionsInCategory', $auctionsInCategory);
     }
 }

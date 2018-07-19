@@ -56,8 +56,11 @@
 
     $twig = new Twig_Environment($loader, [
         'cache' => 'twig-cache',
-        'auto_reload' => true
+        'auto_reload' => true,
+        'debug' => true,
     ]);
+
+    $twig->addExtension(new Twig_Extension_Debug());
 
     echo $twig->render(
         $route->getControllerName() .'/'. $route->getMethodName(). '.html',
