@@ -10,6 +10,7 @@
     use App\Models\CategoryModel;
     use App\Models\AuctionModel;
     use App\Models\OfferModel;
+    use App\Models\AuctionViewModel;
 
     use Configuration;
 
@@ -31,6 +32,19 @@ class AuctionController extends Controller {
             $lastOfferPrice = $auction->starting_price;
         }
         $this->set('lastOfferPrice', $lastOfferPrice);
+
+        $auctionViewModel = new AuctionViewModel($this->getDatabaseConnection());
+
+        $ipAddress  = filter_input(INPUT_SERVER, 'REMOTE_ADDR');
+        $user_agent = filter_input(INPUT_SERVER, 'HTTP_USER_AGENT');
+
+        $auctionViewModel->add(
+            [
+                'auction_id' => $id,
+                'ip_address' => $ipAddress,
+                'user_agent' => $user_agent
+            ]
+        );
     }
 
 

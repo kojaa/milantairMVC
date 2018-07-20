@@ -16,6 +16,10 @@ abstract class Model {
        return  $this->dbc->getConnection();
     }
 
+    protected function getFields(): array {
+        return [];
+    }
+
     final private function getTableName(): string {
         $matches = [];
         preg_match('|^.*\\\((?:[A-Z][a-z]+)+)Model$|', static::class, $matches);
@@ -89,5 +93,42 @@ abstract class Model {
             $items = $prep->fetchAll(\PDO::FETCH_OBJ);
         }
         return $items;
+    }
+
+    final public function add(array $data){
+        $fields = $this->getFields();
+
+        $supportedFieldNames = array_keys($fields);
+        $requestedFieldNames = array_keys($data);
+
+        foreach($requestedFieldNames as $requestedFieldName){
+            if(!in_array($requestedFieldName, $supportedFieldNames)){
+                throw new \Exception('Field '.$requestedFieldName. ' is not supported');
+            }
+
+            if(!$fields[$requestedFieldName]->isEditable()){
+                throw new \Exception('Field '.$requestedFieldName. ' is not editable');
+            } 
+            
+            if(!$fields[$requestedFieldName]->isValid($data[$requestedFieldName])){
+                throw new \Exception('Value for the field '.$requestedFieldName. ' is not valid');
+            }
+        }
+
+        $tableName = $this->getTableName();
+
+        $sqlFieldNames = implode(', ', $requestedFieldNames);
+
+        $questionMarks = str_repeat('?,', count($data));
+        $questionMarks = substr($questionMarks, 0, -1);
+
+        $sql = "INSERT INTO {$tableName}  ({$sqlFieldNames}) VALUES (?, ?, ?)";
+        $prep = $this->dbc->getConnection()->prepare($sql);
+        $res = $prep->execute(array_values($data));
+        if(!$res){
+            return false;
+        }
+        
+        $prep = $this->dbc->getConnection()->lastInsertId();
     }
 }
