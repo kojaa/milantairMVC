@@ -95,7 +95,7 @@ abstract class Model {
         return $items;
     }
 
-    final public function add(array $data){
+    final private function checkFieldList(array $data){
         $fields = $this->getFields();
 
         $supportedFieldNames = array_keys($fields);
@@ -114,10 +114,15 @@ abstract class Model {
                 throw new \Exception('Value for the field '.$requestedFieldName. ' is not valid');
             }
         }
+    }
+
+    final public function add(array $data){
+        
+        $this->checkFieldList($data);
 
         $tableName = $this->getTableName();
 
-        $sqlFieldNames = implode(', ', $requestedFieldNames);
+        $sqlFieldNames = implode(', ', array_keys($data));
 
         $questionMarks = str_repeat('?,', count($data));
         $questionMarks = substr($questionMarks, 0, -1);
@@ -130,5 +135,34 @@ abstract class Model {
         }
         
         $prep = $this->dbc->getConnection()->lastInsertId();
+    }
+
+    final public function editById(int $id, array $data) {
+
+        $this->checkFieldList($data);
+
+        $tableName = $this->getTableName();
+
+        $editList = [];
+        $values = []; 
+        foreach ($data as $fieldName => $value) {
+            $editList[] = "{$fieldName} = ?";
+            $values[] = $value;
+        }
+        $editString = implode(', ', $editList);
+        $values[] = $id;
+
+        $sql = "UPDATE {$tableName} SET {$editString} WHERE {$tableName}_id = ? ";
+        $prep = $this->dbc->getConnection()->prepare($sql);
+        return $prep->execute($values);
+    }
+
+    final public function deleteById(int $id){
+
+        $tableName = $this->getTableName();
+
+        $sql = "DELETE FROM ". $tableName . " WHERE ". $tableName . "_id = ?";
+        $prep = $this->dbc->getConnection()->prepare($sql);
+        return $prep->execute([$id]);
     }
 }
