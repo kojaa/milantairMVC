@@ -1,8 +1,10 @@
 <?php
 
+    use App\Core\Route;
+
     return [
-        App\Core\Route::get('|^category/([0-9]+)/?$|', 'Category', 'show'),
-        App\Core\Route::get('|^category/([0-9]+)/delete/?$|', 'Category', 'delete'),
-        App\Core\Route::get('|^auction/([0-9]+)/?$|', 'Auction', 'show'),
-        App\Core\Route::any('|^.*$|', 'Main', 'home')
+        Route::get('|^category/([0-9]+)/?$|', 'Category', 'show'),
+        Route::get('|^category/([0-9]+)/delete/?$|', 'Category', 'delete'),
+        Route::get('|^auction/([0-9]+)/?$|', 'Auction', 'show'),
+        Route::any('|^.*$|', 'Main', 'home')
     ];
