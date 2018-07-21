@@ -9,9 +9,11 @@ class AuctionViewModel extends Model {
 
     protected function getFields(): array {
         return [
-            'auction_id' => new Field('|^[1-9][0-9]{0,9}$|', true),
-            'ip_address' => new Field('|^[0-9]{1,3}(\.[0-9]{1,3}){3}$|', true),
-            'user_agent' => new Field('|^.{0,255}$|', true)
+            'auction_view_id'   => Field::readonlyInteger(20),
+            'created_at'        => Field::readonlyDateTime(),
+            'auction_id'        => Field::editableInteger(10),
+            'ip_address'        => Field::editableIpAddress(),
+            'user_agent'        => Field::editableString(255)
         ];
     }
 
