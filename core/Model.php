@@ -134,10 +134,16 @@ abstract class Model {
         $questionMarks = str_repeat('?,', count($data));
         $questionMarks = substr($questionMarks, 0, -1);
 
-        $sql = "INSERT INTO {$tableName}  ({$sqlFieldNames}) VALUES (?, ?, ?)";
+        $sql = "INSERT INTO {$tableName}  ({$sqlFieldNames}) VALUES ($questionMarks)";
+        
         $prep = $this->dbc->getConnection()->prepare($sql);
         $res = $prep->execute(array_values($data));
         if(!$res){
+            var_dump($sql);
+            echo '<hr>';
+            var_dump($prep);
+            echo '<hr>';
+            var_dump($res);
             return false;
         }
         

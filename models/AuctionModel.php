@@ -15,23 +15,23 @@ class AuctionModel extends Model {
 
     protected function getFields(): array {
         return [
-            'auction_id'      => new Field((new NumberValidator())->setIntegerLength(10), false),
-            'created_at'      => new Field((new DateTimeValidator())->allowDate()
-                                                                    ->allowTime() ,false),
+        'auction_id'      => new Field((new NumberValidator())->setIntegerLength(10), false),
+        'created_at'      => new Field((new DateTimeValidator())->allowDate()
+                                                                ->allowTime() ,false),
 
-            'title'             => new Field((new StringValidator())->setMaxLength(255)),
-            'description'       => new Field((new StringValidator())->setMaxLength(64*1024)),
-            'starting_price'    => new Field((new NumberValidator())->setDecimal()
-                                                                    ->setUnsigned()
-                                                                    ->setIntegerLength(7)->setMaxDecimalDigits(2)),
+        'title'             => new Field((new StringValidator())->setMaxLength(255)),
+        'description'       => new Field((new StringValidator())->setMaxLength(64*1024)),
 
-            'starts_at'         => new Field((new DateTimeValidator())->allowDate()
-                                                                      ->allowTime()),
+        'starting_price'    => new Field((new NumberValidator())->setDecimal()
+                                                                ->setUnsigned()
+                                                                ->setIntegerLength(7)->setMaxDecimalDigits(2)),
 
-            'ends_at'           => new Field((new DateTimeValidator())->allowDate()
-                                                                      ->allowTime()),
-            'is_active'         => new Field(new BitValidator()),
-            'category_id'       => new Field((new NumberValidator())->setIntegerLength(11))
+        'starts_at'         => new Field((new DateTimeValidator())->allowDate()->allowTime()),
+        'ends_at'           => new Field((new DateTimeValidator())->allowDate()->allowTime()),
+
+
+        'is_active'         => new Field(new BitValidator()),
+        'category_id'       => new Field((new NumberValidator())->setIntegerLength(10))
         ];
     }
 
