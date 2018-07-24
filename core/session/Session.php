@@ -13,14 +13,16 @@ final class Session {
         $this->sessionData = (object) [];
         $this->sessionLife = $sessionLife;
 
-        $this->$sessionId = \filter_input(INPUT_COOKIE, 'APPSESSION', FILTER_SANITIZE_STRING);
-        $this->$sessionId = \preg_replace('|[^A-Za-z0-9]|', '', $this->$sessionId);
+        $this->sessionId = \filter_input(INPUT_COOKIE, 'APPSESSION', FILTER_SANITIZE_STRING);
+        $this->sessionId = \preg_replace('|[^A-Za-z0-9]|', '', $this->sessionId);
 
 
         if(strlen($this->sessionId) != 32) {
             $this->sessionId = $this->generateSessionId();
             setcookie('APPSESSION', $this->sessionId, time() + $this->sessionLife);
         }
+
+        //var_dump($this->sessionId);
     }
 
     private function generateSessionId(): string {
@@ -57,14 +59,14 @@ final class Session {
     }
 
     public function save() {
-        $jsonData = \json_encode($this->$sessionData);
-        $this->sessionStorage->save($this->$sessionId , $jsonData);
+        $jsonData = \json_encode($this->sessionData);
+        $this->sessionStorage->save($this->sessionId , $jsonData);
         setcookie('APPSESSION', $this->sessionId, time() + $this->sessionLife);
     }
 
     public function reload() {
-        $jsonData = $this->sessionStorage->load($this->$sessionId);
-        $restoreData = \json_decode($jsonData);
+        $jsonData = $this->sessionStorage->load($this->sessionId);
+        $restoredData = \json_decode($jsonData);
 
         if(!$restoredData){
             $this->sessionData = (object) [];
@@ -75,7 +77,7 @@ final class Session {
 
     public function regenerate() {
         $this->reload();
-        $this->sessionStorage->delete($this->$sessionId);
+        $this->sessionStorage->delete($this->sessionId);
         $this->sessionId = $this->generateSessionId();
         $this->save();
         setcookie('APPSESSION', $this->sessionId, time() + $this->sessionLife);

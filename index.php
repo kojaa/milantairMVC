@@ -1,5 +1,5 @@
 <?php
-   
+
     require_once "Configuration.php";
     require_once "vendor/autoload.php";
 
@@ -50,6 +50,7 @@
 
     $controller->setSession($session);
     $controller->getSession()->reload();
+
 
     call_user_func_array([$controller, $route->getMethodName()], $arguments);
     $controller->getSession()->save();

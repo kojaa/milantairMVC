@@ -25,7 +25,7 @@ class MainController extends Controller {
     //    $staraVrednost = $this->getSession()->get('neki_kljuc', '/');
     //    $this->set('podatak', $staraVrednost);
 
-    //    $this->getSession()->clear();
+    //     $this->getSession()->clear();
     }
 }
 
