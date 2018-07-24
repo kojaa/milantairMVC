@@ -20,17 +20,12 @@ class MainController extends Controller {
         $categories = $categoryModel->getAll();
         $this->set('categories', $categories);
 
-        $auctionModel = new AuctionModel($this->getDatabaseConnection());
-        $res = $auctionModel->add([
+        //$this->getSession()->put('neki_kljuc', 'neka_vrednost'. rand(100, 999));
+        
+    //    $staraVrednost = $this->getSession()->get('neki_kljuc', '/');
+    //    $this->set('podatak', $staraVrednost);
 
-            'starts_at' => '2018-04-11 10:00:11',
-            'ends_at' => '2018-04-18 10:00:11',
-            'category_id' => 3,
-            'title' => 'naslov aukcije',
-            'description' => 'opis aukcije......',
-            'starting_price' => '100.4',
-            'is_active' => 1,
-        ]);
+    //    $this->getSession()->clear();
     }
 }
 

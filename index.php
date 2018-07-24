@@ -1,5 +1,5 @@
 <?php
-    
+   
     require_once "Configuration.php";
     require_once "vendor/autoload.php";
 
@@ -22,7 +22,7 @@
         Configuration::DATABASE_NAME
     );
 
-    define('BASE', Configuration::BASE);
+    //define('BASE', Configuration::BASE);
 
     $databaseConnection = new DatabaseConnection($databaseConfiguration);
 
@@ -38,11 +38,22 @@
 
     $route = $router->find($httpMethod, $url);
     $arguments = $route->extractArguments($url);
-    
 
     $fullControllerName = "\\App\\Controllers\\". $route->getControllerName(). "Controller";
     $controller = new $fullControllerName($databaseConnection);
+
+    $sessionStorageClassName = Configuration::SESSION_STORAGE;
+    $sessionStorageConstructorArguments = Configuration::SESSION_STORAGE_DATA;
+    $sessionStorage = new $sessionStorageClassName(...$sessionStorageConstructorArguments);
+
+    $session = new App\Core\Session\Session($sessionStorage, Configuration::SESSION_LIFETIME);
+
+    $controller->setSession($session);
+    $controller->getSession()->reload();
+
     call_user_func_array([$controller, $route->getMethodName()], $arguments);
+    $controller->getSession()->save();
+
     $data = $controller->getData();
 
     if($controller instanceof \App\Core\ApiController){

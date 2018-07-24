@@ -35,18 +35,23 @@ class __TwigTemplate_53caff1a9e9d56517372e248298b99f229fa3f5d997b8fc2b329e88eea3
         ob_start();
         // line 5
         echo "
+    <p>";
+        // line 6
+        echo twig_escape_filter($this->env, ($context["podatak"] ?? null), "html", null, true);
+        echo "</p>
+
 <div class=\"categories\">
         ";
-        // line 7
+        // line 9
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 8
+            // line 10
             echo "        <a class=\"category\" href=\"http://localhost/milantair/MVC/category/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category_id", array()), "html", null, true);
             echo "\">
             ";
-            // line 9
+            // line 11
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", array()));
             echo "
         </a>
@@ -55,7 +60,7 @@ class __TwigTemplate_53caff1a9e9d56517372e248298b99f229fa3f5d997b8fc2b329e88eea3
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 12
+        // line 14
         echo "</div>
 ";
         echo trim(preg_replace('/>\s+</', '><', ob_get_clean()));
@@ -73,7 +78,7 @@ class __TwigTemplate_53caff1a9e9d56517372e248298b99f229fa3f5d997b8fc2b329e88eea3
 
     public function getDebugInfo()
     {
-        return array (  59 => 12,  50 => 9,  45 => 8,  41 => 7,  37 => 5,  35 => 4,  32 => 3,  15 => 1,);
+        return array (  64 => 14,  55 => 11,  50 => 10,  46 => 9,  40 => 6,  37 => 5,  35 => 4,  32 => 3,  15 => 1,);
     }
 
     public function getSourceContext()
@@ -82,6 +87,8 @@ class __TwigTemplate_53caff1a9e9d56517372e248298b99f229fa3f5d997b8fc2b329e88eea3
 
 {% block main %}
 {% spaceless %}
+
+    <p>{{podatak}}</p>
 
 <div class=\"categories\">
         {% for category in categories %}
