@@ -15,7 +15,7 @@ body {
                          "banner search"
                          "menu  menu ";
 }
-.banners { grid-area: banner; background-color: chocolate; }
+.banners { grid-area: banner;}
 .social-icons { grid-area: social; text-align: right;}
 .search-box { grid-area: search; text-align: right;}
 

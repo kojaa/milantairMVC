@@ -7,11 +7,13 @@ final class Session {
     private $sessionData;
     private $sessionId;
     private $sessionLife;
+    private $fingerprintProvider;
 
     public function __construct(SessionStorage $sessionStorage, int $sessionLife = 1800){
         $this->sessionStorage = $sessionStorage;
         $this->sessionData = (object) [];
         $this->sessionLife = $sessionLife;
+        $this->fingerprintProvider = null;
 
         $this->sessionId = \filter_input(INPUT_COOKIE, 'APPSESSION', FILTER_SANITIZE_STRING);
         $this->sessionId = \preg_replace('|[^A-Za-z0-9]|', '', $this->sessionId);
@@ -23,6 +25,10 @@ final class Session {
         }
 
         //var_dump($this->sessionId);
+    }
+
+    public function setFingerprintProvider(\App\Core\Fingerprint\FingerprintProvider $fp) {
+        $this->fingerprintProvider = $fp;
     }
 
     private function generateSessionId(): string {
@@ -59,9 +65,14 @@ final class Session {
     }
 
     public function save() {
+        $fingerprint = $this->fingerprintProvider->provideFingerprint();
+        $this->sessionData->__fingerprint = $fingerprint;
+
         $jsonData = \json_encode($this->sessionData);
         $this->sessionStorage->save($this->sessionId , $jsonData);
         setcookie('APPSESSION', $this->sessionId, time() + $this->sessionLife);
+
+        
     }
 
     public function reload() {
@@ -73,6 +84,26 @@ final class Session {
             return;
         }
         $this->sessionData = $restoredData;
+
+        if($this->fingerprintProvider === null) {
+            return;
+        }
+
+        $savedFingerprint = $this->sessionData->__fingerprint ?? null;
+        if($savedFingerprint === null) {
+            return;
+        }
+
+        $currentFingerprint = $this->fingerprintProvider->provideFingerprint();
+
+        if($currentFingerprint !== $savedFingerprint) {
+            $this->clear();
+            $this->sessionStorage->delete($this->sessionId);
+            $this->sessionId = $this->generateSessionId();
+            $this->save();
+            setcookie('APPSESSION', $this->sessionId, time() + $this->sessionLife);
+        }
+
     }
 
     public function regenerate() {

@@ -20,12 +20,15 @@ class MainController extends Controller {
         $categories = $categoryModel->getAll();
         $this->set('categories', $categories);
 
-        //$this->getSession()->put('neki_kljuc', 'neka_vrednost'. rand(100, 999));
-        
-    //    $staraVrednost = $this->getSession()->get('neki_kljuc', '/');
-    //    $this->set('podatak', $staraVrednost);
+        //$this->getSession()->put('neki_kljuc', 'neka_vrednost'. rand(10, 99));
 
-    //     $this->getSession()->clear();
+        $staraVrednost = $this->getSession()->get('brojac', 0);
+        $novaVrednost = $staraVrednost + 1;
+        $this->getSession()->put('brojac', $novaVrednost);
+
+        $this->set('podatak', $novaVrednost);
+
+        //$this->getSession()->clear();
     }
 }
 
