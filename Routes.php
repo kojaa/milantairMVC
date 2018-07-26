@@ -28,7 +28,7 @@
 
         # User role routes:
         Route::get('|^user/profile/?$|',                   'UserDashboard',          'index'),
-
+        
         Route::get('|^user/categories/?$|',                'UserCategoryManagement', 'categories'),
         Route::get('|^user/categories/edit/([0-9]+)/?$|',  'UserCategoryManagement', 'getEdit'),
         Route::post('|^user/categories/edit/([0-9]+)/?$|', 'UserCategoryManagement', 'postEdit'),
