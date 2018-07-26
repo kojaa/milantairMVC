@@ -82,7 +82,7 @@ class __TwigTemplate_c2cce91fc28d3400fe58670d0eb475f033bcba3a334539374bd0c54d7f1
     <footer class=\"site-footer\">
         &copy; 2018 Aukcijska kuca Ta &amp; Ta
     </footer>
-
+<script src=\"http://localhost/milantair/MVC/assets/js/bookmark.js\"></script>
 </body>
 </html>";
     }
@@ -171,7 +171,7 @@ class __TwigTemplate_c2cce91fc28d3400fe58670d0eb475f033bcba3a334539374bd0c54d7f1
     <footer class=\"site-footer\">
         &copy; 2018 Aukcijska kuca Ta &amp; Ta
     </footer>
-
+<script src=\"http://localhost/milantair/MVC/assets/js/bookmark.js\"></script>
 </body>
 </html>", "_global/index.html", "D:\\XAMPP\\htdocs\\milantair\\MVC\\views\\_global\\index.html");
     }

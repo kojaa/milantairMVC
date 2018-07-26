@@ -9,9 +9,8 @@ class CategoryModel extends Model {
 
     protected function getFields(): array {
         return [
-            'category_id'          => Field::readonlyInteger(11),
-
-            'name'                 => Field::editableString(64),
+            'category_id'     => new Field((new \App\Validators\NumberValidator())->setIntegerLength(11), false),
+            'name'            => new Field((new \App\Validators\StringValidator(0, 64)) )
         ];
     }
 

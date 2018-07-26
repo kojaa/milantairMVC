@@ -5,16 +5,22 @@
     use App\Core\Model;
     use App\Core\Field;
 
+    use App\Validators\NumberValidator;
+    use App\Validators\DateTimeValidator;
+    
 class OfferModel extends Model {
 
     protected function getFields(): array {
         return [
-            'offer_id'          => Field::readonlyInteger(20),
-            'created_at'        => Field::readonlyDateTime(),
-            
-            'auction_id'        => Field::editableInteger(10),
-            'user_id'           => Field::editableInteger(10),
-            'price'             => Field::editableMaxDecimal(7, 2)
+            'offer_id'        => new Field((new NumberValidator())->setIntegerLength(20), false),
+            'created_at'      => new Field((new DateTimeValidator())->allowDate()->allowTime() , false),
+
+            'auction_id'      => new Field((new NumberValidator())->setIntegerLength(11)),
+            'user_id'         => new Field((new NumberValidator())->setIntegerLength(11)),
+            'price'           => new Field((new NumberValidator())->setDecimal()
+                                                                  ->setUnsigned()
+                                                                  ->setIntegerLength(7)
+                                                                  ->setMaxDecimalDigits(2) )
         ];
     }
 
