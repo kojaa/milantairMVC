@@ -98,3 +98,12 @@ body {
 .auction > .auction-big-image { grid-area: big-image; height: 130px; width: 120px;}
 .auction > .image-1 { grid-area: small-image-1; width: 80px;}
 .auction > .image-2 { grid-area: small-image-2; width: 80px;}
+
+.bookmarks {
+    border: 1px solid #000000;
+    background-color: #fefefe;
+    position: fixed;
+    display: block;
+    right: 0px;
+    top: 50px;
+}

@@ -79,6 +79,8 @@ class __TwigTemplate_c2cce91fc28d3400fe58670d0eb475f033bcba3a334539374bd0c54d7f1
         // line 53
         echo "    </main>
 
+    <div class=\"bookmarks\">Loading bookmarks...</div>
+
     <footer class=\"site-footer\">
         &copy; 2018 Aukcijska kuca Ta &amp; Ta
     </footer>
@@ -109,7 +111,7 @@ class __TwigTemplate_c2cce91fc28d3400fe58670d0eb475f033bcba3a334539374bd0c54d7f1
 
     public function getDebugInfo()
     {
-        return array (  102 => 52,  99 => 51,  94 => 11,  91 => 10,  80 => 53,  78 => 51,  38 => 13,  36 => 10,  25 => 1,);
+        return array (  104 => 52,  101 => 51,  96 => 11,  93 => 10,  80 => 53,  78 => 51,  38 => 13,  36 => 10,  25 => 1,);
     }
 
     public function getSourceContext()
@@ -167,6 +169,8 @@ class __TwigTemplate_c2cce91fc28d3400fe58670d0eb475f033bcba3a334539374bd0c54d7f1
         {% block main %}
         {% endblock %}
     </main>
+
+    <div class=\"bookmarks\">Loading bookmarks...</div>
 
     <footer class=\"site-footer\">
         &copy; 2018 Aukcijska kuca Ta &amp; Ta

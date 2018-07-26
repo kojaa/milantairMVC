@@ -22,6 +22,14 @@ class ApiBookmarkController extends ApiController {
         }
 
         $bookmarks = $this->getSession()->get('bookmarks', []);
+
+        foreach ($bookmarks as $bookmark) {
+            if ($bookmark->auction_id == $auctionId) {
+                $this->set('error', -2);
+                return;
+            }
+        }
+
         $bookmarks[] = $auction;
         $this->getSession()->put('bookmarks', $bookmarks);
 

@@ -18,7 +18,7 @@ class UserModel extends Model {
             'created_at'      => new Field((new DateTimeValidator())->allowDate()->allowTime() , false),
 
             'username'        => new Field((new StringValidator(0, 64)) ),
-            'password_hash'   => new Field((new StringValidator(0, 128)) ),
+            'password'   => new Field((new StringValidator(0, 128)) ),
             'email'           => new Field((new StringValidator(0, 255)) ),
             'forename'        => new Field((new StringValidator(0, 64)) ),
             'surname'         => new Field((new StringValidator(0, 64)) ),

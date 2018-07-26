@@ -3,6 +3,9 @@
     use App\Core\Route;
 
     return [
+        Route::get('|^user/register/?$|', 'Main', 'getRegister'),
+        Route::post('|^user/register/?$|', 'Main', 'postRegister'),
+
         Route::get('|^category/([0-9]+)/?$|', 'Category', 'show'),
         Route::get('|^category/([0-9]+)/delete/?$|', 'Category', 'delete'),
         Route::get('|^auction/([0-9]+)/?$|', 'Auction', 'show'),
