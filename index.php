@@ -59,7 +59,7 @@
 
     $controller->setSession($session);
     $controller->getSession()->reload();
-
+    $controller->__pre();
 
     call_user_func_array([$controller, $route->getMethodName()], $arguments);
     $controller->getSession()->save();
@@ -77,11 +77,13 @@
 
     $twig = new Twig_Environment($loader, [
         'cache' => 'twig-cache',
-        'auto_reload' => true,
-        'debug' => true,
+        'auto_reload' => true
+        //'debug' => true,
     ]);
 
-    $twig->addExtension(new Twig_Extension_Debug());
+    //$twig->addExtension(new Twig_Extension_Debug());
+    
+    $data['BASE'] = Configuration::BASE;
 
     echo $twig->render(
         $route->getControllerName() .'/'. $route->getMethodName(). '.html',

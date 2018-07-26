@@ -35,18 +35,25 @@ class __TwigTemplate_02fa650a2898b3257782ec2b9c1af1fb2c5294cf8d2a2de4e0dec472000
         ob_start();
         // line 5
         echo "
+    <p>";
+        // line 6
+        echo twig_escape_filter($this->env, ($context["podatak"] ?? null), "html", null, true);
+        echo "</p>
+
 <div class=\"categories\">
         ";
-        // line 7
+        // line 9
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 8
-            echo "        <a class=\"category\" href=\"http://localhost/milantair/MVC/category/";
+            // line 10
+            echo "        <a class=\"category\" href=\"";
+            echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+            echo "category/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category_id", array()), "html", null, true);
             echo "\">
             ";
-            // line 9
+            // line 11
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", array()));
             echo "
         </a>
@@ -55,7 +62,7 @@ class __TwigTemplate_02fa650a2898b3257782ec2b9c1af1fb2c5294cf8d2a2de4e0dec472000
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 12
+        // line 14
         echo "</div>
 ";
         echo trim(preg_replace('/>\s+</', '><', ob_get_clean()));
@@ -73,7 +80,7 @@ class __TwigTemplate_02fa650a2898b3257782ec2b9c1af1fb2c5294cf8d2a2de4e0dec472000
 
     public function getDebugInfo()
     {
-        return array (  59 => 12,  50 => 9,  45 => 8,  41 => 7,  37 => 5,  35 => 4,  32 => 3,  15 => 1,);
+        return array (  66 => 14,  57 => 11,  50 => 10,  46 => 9,  40 => 6,  37 => 5,  35 => 4,  32 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

@@ -10,6 +10,10 @@ class Controller {
     private $session;
     private $data = [];
 
+    public function __pre() {
+        
+    }
+
     final public function __construct(DatabaseConnection &$dbc){
         $this->dbc = $dbc;
     }
@@ -40,4 +44,11 @@ class Controller {
     final public function getData(): array {
         return $this->data;
     }
+
+    final protected function redirect(string $path, int $code = 307) {
+        ob_clean();
+        header('Location: '. $path, true, $code);
+        exit;
+    }
+
 }

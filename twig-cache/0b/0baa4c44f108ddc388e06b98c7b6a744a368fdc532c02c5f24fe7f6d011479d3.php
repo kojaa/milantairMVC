@@ -33,7 +33,7 @@ class __TwigTemplate_3281468df1336cfa792a85704c1452b1fe2a1c22b75f25c9cfcc757d592
     public function block_main($context, array $blocks = array())
     {
         // line 4
-        echo "
+        echo "    
 <ul> 
     ";
         // line 6
@@ -43,8 +43,10 @@ class __TwigTemplate_3281468df1336cfa792a85704c1452b1fe2a1c22b75f25c9cfcc757d592
             // line 7
             echo "        <li class=\"auction\"> 
 
-        <a href=\"http://localhost/milantair/MVC/auction/";
+        <a href=\"";
             // line 9
+            echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+            echo "auction/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auction"], "auction_id", array()), "html", null, true);
             echo "\" class=\"auction-title\">
             ";
@@ -65,8 +67,10 @@ class __TwigTemplate_3281468df1336cfa792a85704c1452b1fe2a1c22b75f25c9cfcc757d592
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auction"], "starting_price", array()));
             echo " &euro;</span>
 
-            <a class=\"auction-big-image\" href=\"http://localhost/milantair/MVC/auction/";
+            <a class=\"auction-big-image\" href=\"";
             // line 16
+            echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+            echo "auction/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auction"], "auction_id", array()), "html", null, true);
             echo "\">
             <img src=\"#\" alt=\"Velika slika - ";
@@ -83,22 +87,25 @@ class __TwigTemplate_3281468df1336cfa792a85704c1452b1fe2a1c22b75f25c9cfcc757d592
             // line 21
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["auction"], "auction_id", array()), "html", null, true);
             echo "\" class=\"auction-small-image image-2\">
+            
         
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['auction'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 23
+        // line 24
         echo " 
 </ul>
+
+
 ";
     }
 
-    // line 27
+    // line 30
     public function block_naslov($context, array $blocks = array())
     {
-        // line 28
+        // line 31
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["category"] ?? null), "name", array()));
         echo "
 ";
@@ -116,7 +123,7 @@ class __TwigTemplate_3281468df1336cfa792a85704c1452b1fe2a1c22b75f25c9cfcc757d592
 
     public function getDebugInfo()
     {
-        return array (  102 => 28,  99 => 27,  93 => 23,  84 => 21,  79 => 19,  74 => 17,  70 => 16,  65 => 14,  61 => 13,  57 => 12,  52 => 10,  48 => 9,  44 => 7,  40 => 6,  36 => 4,  33 => 3,  15 => 1,);
+        return array (  109 => 31,  106 => 30,  98 => 24,  88 => 21,  83 => 19,  78 => 17,  72 => 16,  67 => 14,  63 => 13,  59 => 12,  54 => 10,  48 => 9,  44 => 7,  40 => 6,  36 => 4,  33 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

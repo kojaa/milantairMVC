@@ -33,33 +33,37 @@ class __TwigTemplate_b0d9ebd59a5faa4cfa0a8488f71828b2a98dec486aeea55263fbcf0d684
     public function block_main($context, array $blocks = array())
     {
         // line 4
-        echo "<h1>";
+        echo "<a href=\"#\" onclick=\"addBookmark(";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["auction"] ?? null), "auction_id", array()), "html", null, true);
+        echo ");\">Add to bookmark</a>
+<h1>";
+        // line 5
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["auction"] ?? null), "title", array()));
         echo "</h1>
 <p>";
-        // line 5
+        // line 6
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["auction"] ?? null), "description", array()), "html", null, true);
         echo "</p>
 <p>Pocetna cena: ";
-        // line 6
+        // line 7
         echo twig_escape_filter($this->env, ($context["lastOfferPrice"] ?? null), "html", null, true);
         echo " EUR</p>
 <p>Datum pocetka: ";
-        // line 7
+        // line 8
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["auction"] ?? null), "created_at", array()), "j. n. Y."), "html", null, true);
         echo "</p>
 <p>Datum kraja: ";
-        // line 8
+        // line 9
         echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["auction"] ?? null), "expires_at", array()), "j. n. Y."), "html", null, true);
         echo "</p>
 
 ";
     }
 
-    // line 12
+    // line 13
     public function block_naslov($context, array $blocks = array())
     {
-        // line 13
+        // line 14
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, ($context["auction"] ?? null), "title", array()));
         echo "
 ";
@@ -77,7 +81,7 @@ class __TwigTemplate_b0d9ebd59a5faa4cfa0a8488f71828b2a98dec486aeea55263fbcf0d684
 
     public function getDebugInfo()
     {
-        return array (  63 => 13,  60 => 12,  53 => 8,  49 => 7,  45 => 6,  41 => 5,  36 => 4,  33 => 3,  15 => 1,);
+        return array (  67 => 14,  64 => 13,  57 => 9,  53 => 8,  49 => 7,  45 => 6,  41 => 5,  36 => 4,  33 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

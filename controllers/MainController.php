@@ -86,5 +86,43 @@ class MainController extends Controller {
 
         $this->set('message', 'Napravnjen je novi nalog, sada mozete da se prijavite');
     }
+
+    public function getLogin() {
+
+    }
+
+    public function postLogin() {
+        $username = \filter_input(INPUT_POST, 'login_username', FILTER_SANITIZE_STRING);
+        $password = \filter_input(INPUT_POST, 'login_password', FILTER_SANITIZE_STRING);
+
+        $validanPassword = (new \App\Validators\StringValidator())
+            ->setMinLength(7)
+            ->setMaxLength(120)
+            ->isValid($password);
+
+        if ( !$validanPassword) {
+            $this->set('message', 'Doslo je do greške: Lozinka nije ispravnog formata.');
+            return;
+        }
+
+        $userModel = new \App\Models\UserModel($this->getDatabaseConnection());
+
+        $user = $userModel->getByFieldName('username', $username);
+        if (!$user) {
+            $this->set('message', 'Doslo je do greške: Ne postoji korisnik sa tim korisničkim imenom.');
+            return;
+        }
+
+        if (!password_verify($password, $user->password)) {
+            sleep(1);
+            $this->set('message', 'Doslo je do greške: Lozinka nije ispravna.');
+            return;
+        }
+
+        $this->getSession()->put('user_id', $user->user_id);
+        $this->getSession()->save();
+        $this->redirect('http://localhost/milantair/MVC/user/profile');
+        // $this->redirect(\Configuration::BASE . 'user/profile');
+    }
 }
 
