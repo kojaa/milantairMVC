@@ -33,14 +33,6 @@ class MainController extends Controller {
         $password1 = \filter_input(INPUT_POST, 'reg_password_1', FILTER_SANITIZE_STRING);
         $password2 = \filter_input(INPUT_POST, 'reg_password_2', FILTER_SANITIZE_STRING);
 
-        // print_r([
-        //     $email   , 
-        //     $forename ,
-        //     $surname  ,
-        //     $username ,
-        //     $password1,
-        //     $password2
-        // ]);
         if($password1 !== $password2){
             $this->set('message','Doslo je do greske: niste uneli dva puta istu lozinku');
             return;
@@ -121,8 +113,7 @@ class MainController extends Controller {
 
         $this->getSession()->put('user_id', $user->user_id);
         $this->getSession()->save();
-        $this->redirect('http://localhost/milantair/MVC/user/profile');
-        // $this->redirect(\Configuration::BASE . 'user/profile');
+        $this->redirect(\Configuration::BASE . 'user/profile');
     }
 }
 
