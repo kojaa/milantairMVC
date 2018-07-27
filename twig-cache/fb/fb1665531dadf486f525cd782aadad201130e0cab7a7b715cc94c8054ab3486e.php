@@ -134,7 +134,7 @@ class __TwigTemplate_bee3e6d2dea24f04d6e36f64e8828180e1892bb610100cc326f8eb5d50c
             </div>
 
             <footer class=\"site-footer text-center\">
-                &copy; 2018 - Aukcijska kuca <a href=\"#\">Ta and Ta</a>
+                &copy; 2018 - Aukcijska kuca <a href=\"#\">Ta and Te</a>
             </footer>
         </div>
 
