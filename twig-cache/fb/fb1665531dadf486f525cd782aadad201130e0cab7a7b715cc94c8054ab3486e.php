@@ -23,116 +23,157 @@ class __TwigTemplate_bee3e6d2dea24f04d6e36f64e8828180e1892bb610100cc326f8eb5d50c
     {
         // line 1
         echo "<!DOCTYPE html>
-<html lang=\"en\">
-<head>
-    <meta charset=\"UTF-8\">
-    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
-    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">
-    <link rel=\"stylesheet\" href=\"";
+<html>
+    <head>
+        <title>Ta&amp;Ta - ";
+        // line 4
+        $this->displayBlock('naslov', $context, $blocks);
+        echo "</title>
+        <meta charset=\"utf-8\">
+        <link rel=\"stylesheet\" href=\"";
+        // line 6
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "assets/libs/bootstrap/dist/css/bootstrap.min.css\">
+        <link rel=\"stylesheet\" href=\"";
         // line 7
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "assets/libs/font-awesome/css/font-awesome.min.css\">
+        <link rel=\"stylesheet\" href=\"";
+        // line 8
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "assets/css/main.css\">
-    <title>
-        Ta &amp; Ta 
-        ";
-        // line 10
-        $this->displayBlock('naslov', $context, $blocks);
-        // line 13
-        echo "    </title>
+    </head>
+    <body>
+        <div class=\"container\">
+            <header>
+                <div class=\"row\">
+                    <div class=\"col col-sm\">
+                        <a href=\"";
+        // line 15
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "\">
+                            <img src=\"";
+        // line 16
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "assets/img/banner-1.jpg\" alt=\"Banner 1\">
+                        </a>
+                    </div>
 
-</head>
-<body>
+                    <div class=\"col col-sm\">
+                        <div class=\"social-icons text-right\">
+                            <a href=\"#\"><i class=\"fa fa-linkedin\"></i></a>
+                            <a href=\"#\"><i class=\"fa fa-facebook\"></i></a>
+                            <a href=\"#\"><i class=\"fa fa-twitter\"></i></a>
+                            <a href=\"#\"><i class=\"fa fa-youtube\"></i></a>
+                        </div>
 
-    <header class=\"site-header\">
-        <div class=\"banners\">
-            <a href=\"";
-        // line 20
+                        <div class=\"search-box\">
+                            <form method=\"post\" action=\"";
+        // line 29
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "\" class=\"banner\"></a>
-            <img src=\"https://qph.ec.quoracdn.net/main-qimg-3e1b1533e444c415486fe706f28f5180\" alt=\"BANNER1\" style=\"height:100px;\">
-        </div>
-        <div class=\"social-icons\">
-            <a href=\"\"><img src=\"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnON_222T4Z3zIL6W7IDjLKoZKOySrCOTH5WaK66_JQASIV5-j\" alt=\"LI\"></a>
-            <a href=\"\"><img src=\"https://cdn2.iconfinder.com/data/icons/social-buttons-2/512/facebook-512.png\" alt=\"FB\"></a>
-            <a href=\"\"><img src=\"https://cdn4.iconfinder.com/data/icons/social-media-icons-the-circle-set/48/twitter_circle-512.png\" alt=\"TW\"></a>
-            <a href=\"\"><img src=\"https://i1.wp.com/www.vectorico.com/wp-content/uploads/2018/02/Google-Plus-Icon.png?resize=300%2C300\" alt=\"GP\"></a>
-            <a href=\"\"><img src=\"http://icons.iconarchive.com/icons/dakirby309/simply-styled/256/YouTube-icon.png\" alt=\"YT\"></a>
-        </div>
+        echo "search\">
+                                <div class=\"form-group\">
+                                    <div class=\"input-group\">
+                                        <input type=\"text\" name=\"q\" class=\"form-control\"
+                                               placeholder=\"Ključne reči pretrage\" required pattern=\"[^\\s]{2,}\">
+                                        <div class=\"input-group-append\">
+                                            <button type=\"submit\" class=\"btn btn-primary\">
+                                                <i class=\"fa fa-search\"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
 
-        <div class=\"search-box\">
-            <form action=\"";
-        // line 32
-        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "search\" method=\"POST\">
-                <input type=\"text\" name=\"q\" placeholder=\"Unesite kljucne reci\">
-                <button type=\"submit\">Search</button>
-            </form>
-        </div>
+                <nav class=\"navbar navbar-expand-lg navbar-light bg-light main-menu\">
+                    <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNavAltMarkup\" aria-controls=\"navbarNavAltMarkup\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
+                        <span class=\"navbar-toggler-icon\"></span>
+                    </button>
 
-        <nav id=\"main-menu\">
-            <ul>
-                <li><a href=\"";
-        // line 40
-        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "\">Pocetna</a>
-                <li><a href=\"";
-        // line 41
-        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "categories\">Kategorije</a>
-                <li><a href=\"";
-        // line 42
-        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "profile\">Profil</a>
-                <li><a href=\"";
-        // line 43
-        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "contact\">Kontakt</a>
-                <li><a href=\"";
-        // line 44
-        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "log-out\">Odjava</a>
-            </ul>
-        </nav>
-
-    </header>
-
-    <main>
-        ";
-        // line 51
-        $this->displayBlock('main', $context, $blocks);
+                    <div class=\"collapse navbar-collapse\" id=\"navbarNavAltMarkup\">
+                        <div class=\"navbar-nav\">
+                            <a class=\"nav-item nav-link\" href=\"";
         // line 53
-        echo "    </main>
-
-    <div class=\"bookmarks\">Loading bookmarks...</div>
-
-    <footer class=\"site-footer\">
-        &copy; 2018 Aukcijska kuca Ta &amp; Ta
-    </footer>
-    <script>const BASE = '";
-        // line 60
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
-        echo "'</script>
-<script src=\"";
-        // line 61
+        echo "\"><i class=\"fa fa-home\"></i> Pocetna</a>
+                            <a class=\"nav-item nav-link\" href=\"";
+        // line 54
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "categories\"><i class=\"fa fa-list-alt\"></i> Kategorije</a>
+                            <a class=\"nav-item nav-link\" href=\"";
+        // line 55
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "user/profile\"><i class=\"fa fa-user\"></i> Profil</a>
+                            <a class=\"nav-item nav-link\" href=\"";
+        // line 56
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "contact\"><i class=\"fa fa-phone\"></i> Kontakt</a>
+                            <a class=\"nav-item nav-link\" href=\"";
+        // line 57
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "user/logout\"><i class=\"fa fa-sign-out\"></i> Odjava</a>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <main>
+                ";
+        // line 64
+        $this->displayBlock('main', $context, $blocks);
+        // line 66
+        echo "            </main>
+
+            <div class=\"card bookmark-card\">
+                <div class=\"bookmarks card-body\">
+                    Please wait, loading bookmarks...
+                </div>
+            </div>
+
+            <footer class=\"site-footer text-center\">
+                &copy; 2018 - Aukcijska kuca <a href=\"#\">Ta and Ta</a>
+            </footer>
+        </div>
+
+        <script>const BASE = '";
+        // line 79
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "';</script>
+        <script src=\"";
+        // line 80
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "assets/libs/jquery/dist/jquery.min.js\"></script>
+        <script src=\"";
+        // line 81
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "assets/libs/bootstrap/dist/js/bootstrap.min.js\"></script>
+        <script src=\"";
+        // line 82
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "assets/js/bookmark.js\"></script>
-</body>
-</html>";
+        <script src=\"";
+        // line 83
+        echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
+        echo "assets/js/offer.js\"></script>
+    </body>
+</html>
+";
     }
 
-    // line 10
+    // line 4
     public function block_naslov($context, array $blocks = array())
     {
-        // line 11
-        echo "        Pocetna
-        ";
+        echo "Pocetna";
     }
 
-    // line 51
+    // line 64
     public function block_main($context, array $blocks = array())
     {
-        // line 52
-        echo "        ";
+        // line 65
+        echo "                ";
     }
 
     public function getTemplateName()
@@ -147,7 +188,7 @@ class __TwigTemplate_bee3e6d2dea24f04d6e36f64e8828180e1892bb610100cc326f8eb5d50c
 
     public function getDebugInfo()
     {
-        return array (  135 => 52,  132 => 51,  127 => 11,  124 => 10,  117 => 61,  113 => 60,  104 => 53,  102 => 51,  92 => 44,  88 => 43,  84 => 42,  80 => 41,  76 => 40,  65 => 32,  50 => 20,  41 => 13,  39 => 10,  33 => 7,  25 => 1,);
+        return array (  176 => 65,  173 => 64,  167 => 4,  159 => 83,  155 => 82,  151 => 81,  147 => 80,  143 => 79,  128 => 66,  126 => 64,  116 => 57,  112 => 56,  108 => 55,  104 => 54,  100 => 53,  73 => 29,  57 => 16,  53 => 15,  43 => 8,  39 => 7,  35 => 6,  30 => 4,  25 => 1,);
     }
 
     public function getSourceContext()

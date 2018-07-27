@@ -33,9 +33,8 @@ class __TwigTemplate_cb37d7933eb9760ea5239b554d47c4f3623c146babaaecf5d7efcf5787e
     {
         // line 4
         echo "<div>
-    dashboard
     <a href=\"";
-        // line 6
+        // line 5
         echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
         echo "user/auctions\">
         <i class=\"fa fa-list\"></i> List my auctions
@@ -56,7 +55,7 @@ class __TwigTemplate_cb37d7933eb9760ea5239b554d47c4f3623c146babaaecf5d7efcf5787e
 
     public function getDebugInfo()
     {
-        return array (  39 => 6,  35 => 4,  32 => 3,  15 => 1,);
+        return array (  38 => 5,  35 => 4,  32 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

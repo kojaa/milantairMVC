@@ -34,35 +34,35 @@ class __TwigTemplate_02fa650a2898b3257782ec2b9c1af1fb2c5294cf8d2a2de4e0dec472000
         // line 4
         ob_start();
         // line 5
-        echo "
-    <p>";
+        echo "<div class=\"row\">
+    ";
         // line 6
-        echo twig_escape_filter($this->env, ($context["podatak"] ?? null), "html", null, true);
-        echo "</p>
-
-<div class=\"categories\">
-        ";
-        // line 9
         $context['_parent'] = $context;
         $context['_seq'] = twig_ensure_traversable(($context["categories"] ?? null));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 10
-            echo "        <a class=\"category\" href=\"";
+            // line 7
+            echo "    <div class=\"card col-12 col-sm-6 col-md-4 col-lg-3 col-xl-2 text-center category\">
+        <div class=\"card-body\">
+            <a href=\"";
+            // line 9
             echo twig_escape_filter($this->env, ($context["BASE"] ?? null), "html", null, true);
             echo "category/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category_id", array()), "html", null, true);
-            echo "\">
-            ";
+            echo "\"
+                class=\"card-title\">
+                 ";
             // line 11
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", array()));
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", array()), "html", null, true);
             echo "
-        </a>
+             </a>
+        </div>
+    </div>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 14
+        // line 16
         echo "</div>
 ";
         echo trim(preg_replace('/>\s+</', '><', ob_get_clean()));
@@ -80,7 +80,7 @@ class __TwigTemplate_02fa650a2898b3257782ec2b9c1af1fb2c5294cf8d2a2de4e0dec472000
 
     public function getDebugInfo()
     {
-        return array (  66 => 14,  57 => 11,  50 => 10,  46 => 9,  40 => 6,  37 => 5,  35 => 4,  32 => 3,  15 => 1,);
+        return array (  66 => 16,  55 => 11,  48 => 9,  44 => 7,  40 => 6,  37 => 5,  35 => 4,  32 => 3,  15 => 1,);
     }
 
     public function getSourceContext()

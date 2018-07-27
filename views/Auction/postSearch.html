@@ -2,7 +2,7 @@
 
 {% block main %}
     <ul>
-        {% for auction in auctionsInCategory %}
+        {% for auction in auctions %}
         <li class="auction row">
             <div class="col-12 col-md-2">
                 <a href="{{ BASE }}auction/{{ auction.auction_id }}">
@@ -27,5 +27,5 @@
 {% endblock %}
 
 {% block naslov %}
-{{ category.name|escape }}
+Rezultati pretrage
 {% endblock %}
