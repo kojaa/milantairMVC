@@ -59,6 +59,23 @@ class AuctionController extends Controller {
             }
         }
         return $lastPrice;
+    }
 
+    private function normaliseKeywords(string $keywoards): string{
+        $keywoards = trim($keywoards);
+        $keywoards = \preg_replace('/ +/', ' ',$keywoards);
+        return $keywoards;
+    }
+
+    public function postSearch() {
+        $auctionModel = new AuctionModel($this->getDatabaseConnection());
+
+        $q = filter_input(INPUT_POST, 'q', FILTER_SANITIZE_STRING);
+
+        $keywords = $this->normaliseKeywords($q);
+
+        $auctions = $auctionModel->getAllBySearch($q);
+
+        $this->set('auctions', $auctions);
     }
 }
